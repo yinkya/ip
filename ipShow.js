@@ -103,6 +103,15 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (ipData === "60.147.58.16"){
                 ipData += "  （ 寿司打廃人 ）";
             }
+            if (ipData === "126.241.58.117"){
+                ipData += "  （ なる@暇人w ）";
+            }
+            if (ipData === "219.124.62.15"){
+                ipData += "  （ グロウサギ ）";
+            }
+            if (ipData === "118.8.217.11"){
+                ipData += "  （ みかみか ）";
+            }
             html += '<div id="' + id_head + data["seq"] + '" class="comment clearfix" >';
             html += '<div class="l">' + img_users_pict(data.uid, data.img_no) + '</div>';
             html += '<div class="r">';
