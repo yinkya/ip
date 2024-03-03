@@ -63,7 +63,7 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (data.comment.indexOf('　 ') !== -1) {
                 is_aa = ' is_aa'
             }
-　　　　ipData = data.ip;
+            ipData = data.ip;
             if (ipData === "" || ipData === null){
                 ipData = data.bid;
             }
@@ -84,6 +84,24 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             }
             if (ipData === "43.235.23.216"){
                 ipData += "  （ ナーヴィ ）";
+            }
+            if (ipData === "115.165.9.202"){
+                ipData += "  （ 歌えない寿司 ）";
+            }
+            if (ipData === "180.31.17.14"){
+                ipData += "  （ ねこらて ）";
+            }
+            if (ipData === "222.9.88.115"){
+                ipData += "  （ 海姫 ）";
+            }
+            if (ipData === "133.106.38.26"){
+                ipData += "  （ お琴 ）";
+            }
+            if (ipData === "115.179.168.89"){
+                ipData += "  （ ひな 自演してた ）";
+            }
+            if (ipData === "60.147.58.16"){
+                ipData += "  （ 寿司打廃人 ）";
             }
             html += '<div id="' + id_head + data["seq"] + '" class="comment clearfix" >';
             html += '<div class="l">' + img_users_pict(data.uid, data.img_no) + '</div>';
