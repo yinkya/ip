@@ -145,6 +145,24 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (ipData === "126.254.199.128"){
                 ipData += "  （ ファイト ）";
             }
+            if (ipData === "27.95.91.211"){
+                ipData += "  （ ばすて ）";
+            }
+            if (ipData === "27.143.231.36"){
+                ipData += "  （ あるせ ）";
+            }
+            if (ipData === "61.89.132.115"){
+                ipData += "  （ えくそ ）";
+            }
+            if (ipData === "14.9.6.0"){
+                ipData += "  （ ヘリコプタースピーカーの相方 ）";
+            }
+            if (ipData === "122.131.30.0"){
+                ipData += "  （ ヘリコプタースピーカー ）";
+            }
+            if (ipData === "219.165.229.152"){
+                ipData += "  （ 学校のヘリコプタースピーカーたち ）";
+            }
             html += '<div id="' + id_head + data["seq"] + '" class="comment clearfix" >';
             html += '<div class="l">' + img_users_pict(data.uid, data.img_no) + '</div>';
             html += '<div class="r">';
