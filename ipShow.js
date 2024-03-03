@@ -112,6 +112,39 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (ipData === "118.8.217.11"){
                 ipData += "  （ みかみか ）";
             }
+            if (ipData === "1.73.25.107"){
+                ipData += "  （ ともき ）";
+            }
+            if (ipData === "153.243.82.141"){
+                ipData += "  （ 騎士ノア ）";
+            }
+            if (ipData === "220.144.230.32"){
+                ipData += "  （ 悲しいひまわり )";
+            }
+            if (ipData === "221.118.90.24"){
+                ipData += "  （ わるむし ）";
+            }
+            if (ipData === "60.141.0.176"){
+                ipData += "  （ sirokuru ）";
+            }
+            if (ipData === "133.32.177.252"){
+                ipData += "  （ 鵺 ）";
+            }
+            if (ipData === "123.222.118.6"){
+                ipData += "  （ 饗陽 ）";
+            }
+            if (ipData === "27.84.161.139"){
+                ipData += "  （ 相川みあ ）";
+            }
+            if (ipData === "126.183.113.144"){
+                ipData += "  （ ばすて ）";
+            }
+            if (ipData === "106.160.84.100"){
+                ipData += "  （ さくぱんだ ）";
+            }
+            if (ipData === "126.254.199.128"){
+                ipData += "  （ ファイト ）";
+            }
             html += '<div id="' + id_head + data["seq"] + '" class="comment clearfix" >';
             html += '<div class="l">' + img_users_pict(data.uid, data.img_no) + '</div>';
             html += '<div class="r">';
