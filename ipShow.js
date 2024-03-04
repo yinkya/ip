@@ -163,6 +163,15 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (ipData === "219.165.229.152"){
                 ipData += "  （ 学校のヘリコプタースピーカーたち ）";
             }
+            if (ipData === "222.148.166.39"){
+                ipData += "  （ ひとにゃー ）";
+            }
+            if (ipData === "219.100.180.161"){
+                ipData += "  （ 藍らん ）";
+            }
+            if (ipData === "59.134.80.40"){
+                ipData += "  （ お前を殺す01 ）";
+            }
             html += '<div id="' + id_head + data["seq"] + '" class="comment clearfix" >';
             html += '<div class="l">' + img_users_pict(data.uid, data.img_no) + '</div>';
             html += '<div class="r">';
