@@ -172,6 +172,27 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (ipData === "59.134.80.40"){
                 ipData += "  （ お前を殺す01 ）";
             }
+            if (ipData === "14.11.160.129"){
+                ipData += "  （ 軒 ）";
+            }
+            if (ipData === "180.0.115.137"){
+                ipData += "  （ 舞音 ）";
+            }
+            if (ipData === "1.73.139.34"){
+                ipData += "  （ ラプラス ）";
+            }
+            if (ipData === "103.5.140.181"){
+                ipData += "  （ りくら ）";
+            }
+            if (ipData === "220.153.161.118"){
+                ipData += "  （ 稀那 ）";
+            }
+            if (ipData === "126.182.128.130"){
+                ipData += "  （ 鯖だ ）";
+            }
+            if (ipData === "180.52.61.196"){
+                ipData += "  （ ぺりむ ）";
+            }
             html += '<div id="' + id_head + data["seq"] + '" class="comment clearfix" >';
             html += '<div class="l">' + img_users_pict(data.uid, data.img_no) + '</div>';
             html += '<div class="r">';
