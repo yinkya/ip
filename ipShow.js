@@ -127,7 +127,7 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (ipData === "60.141.0.176"){
                 ipData += "  （ sirokuru ）";
             }
-            if (ipData === "133.32.177.252"){
+            if (ipData === "133.32.177.252" || ipData === "123.226.10.59"){
                 ipData += "  （ 鵺 ）";
             }
             if (ipData === "123.222.118.6"){
