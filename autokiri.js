@@ -30,7 +30,7 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
     for (var i = 0; i < res.length; i++) {
         if (res[i]["comment"] != undefined) {
             data = res[i];
-            if (data["seq"] % 100 == 99) {
+            if (Number(data["seq"]) % 100 == 99) {
                 var data = {
                     comment: "あ",
                     type: "1",
