@@ -100,7 +100,7 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (ipData === "115.179.168.89"){
                 ipData += "  （ ひな 自演してた ）";
             }
-            if (ipData === "60.147.58.16"){
+            if (ipData === "60.147.58.16" || ipData === "126.1.230.174"){
                 ipData += "  （ 寿司打廃人 ）";
             }
             if (ipData === "126.241.58.117"){
