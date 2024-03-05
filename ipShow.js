@@ -208,6 +208,36 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (ipData === undefined || ipData === "undefined"){
                 ipData = "  読み込み後に追加されたので取得不可";
             }
+            if (ipData === "106.167.71.54"){
+                ipData += "  （ 臥薪 ）";
+            }
+            if (ipData === "180.60.148.0"){
+                ipData += "  （ りお ）";
+            }
+            if (ipData === "126.214.112.142"){
+                ipData += "  （ アイス星 ）";
+            }
+            if (ipData === "60.106.251.168"){
+                ipData += "  （ 狐猫 ）";
+            }
+            if (ipData === "221.119.143.254"){
+                ipData += "  （ えむ19 ）";
+            }
+            if (ipData === "170.249.124.64"){
+                ipData += "  （ にょきにょきねこ ）";
+            }
+            if (ipData === "14.8.129.97"){
+                ipData += "  （ サーモンです ）";
+            }
+            if (ipData === "14.13.210.193"){
+                ipData += "  （ ばななせいじん ）";
+            }
+            if (ipData === "14.12.50.128"){
+                ipData += "  （ ハマチ ）";
+            }
+            if (ipData === "60.69.187.224"){
+                ipData += "  （ 月白来 ）";
+            }
             html += '<div id="' + id_head + data["seq"] + '" class="comment clearfix" >';
             html += '<div class="l">' + img_users_pict(data.uid, data.img_no) + '</div>';
             html += '<div class="r">';
