@@ -112,7 +112,7 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (ipData === "118.8.217.11"){
                 ipData += "  （ みかみか ）";
             }
-            if (ipData === "1.73.25.107"){
+            if (ipData === "1.73.25.107" || ipData === "1.73.14.88"){
                 ipData += "  （ ともき ）";
             }
             if (ipData === "153.243.82.141"){
@@ -181,7 +181,7 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (ipData === "1.73.139.34"){
                 ipData += "  （ ラプラス ）";
             }
-            if (ipData === "103.5.140.181"){
+            if (ipData === "103.5.140.181" || ipData === "220.152.98.9"){
                 ipData += "  （ りくら ）";
             }
             if (ipData === "220.153.161.118"){
@@ -204,6 +204,9 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             }
             if (ipData === "202.95.171.146"){
                 ipData += "  （ ガラパコ ）";
+            }
+            if (ipData === undefined || ipData === "undefined"){
+                ipData = "  読み込み後に追加されたので取得不可";
             }
             html += '<div id="' + id_head + data["seq"] + '" class="comment clearfix" >';
             html += '<div class="l">' + img_users_pict(data.uid, data.img_no) + '</div>';
