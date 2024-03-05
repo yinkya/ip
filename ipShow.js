@@ -187,7 +187,7 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (ipData === "220.153.161.118"){
                 ipData += "  （ 稀那 ）";
             }
-            if (ipData === "126.182.128.130"){
+            if (ipData === "126.182.128.130" || ipData === "110.93.108.32"){
                 ipData += "  （ 鯖だ ）";
             }
             if (ipData === "180.52.61.196"){
@@ -237,6 +237,27 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             }
             if (ipData === "60.69.187.224"){
                 ipData += "  （ 月白来 ）";
+            }
+            if (ipData === "60.126.71.201"){
+                ipData += "  （ gaster614 ）";
+            }
+            if (ipData === "60.102.56.133"){
+                ipData += "  （ xなる ）";
+            }
+            if (ipData === "133.200.195.225"){
+                ipData += "  （ 春ですよ ）";
+            }
+            if (ipData === "133.106.35.32"){
+                ipData += "  （ 超めるめる ）";
+            }
+            if (ipData === "114.129.4.225"){
+                ipData += "  （ 葉流 ）";
+            }
+            if (ipData === "153.238.134.10"){
+                ipData += "  （ NTだぅ ）";
+            }
+            if (ipData.includes("114.129.4.") === true){
+                ipData += "  （ 多度津中学校生徒 ）";
             }
             html += '<div id="' + id_head + data["seq"] + '" class="comment clearfix" >';
             html += '<div class="l">' + img_users_pict(data.uid, data.img_no) + '</div>';
