@@ -142,7 +142,7 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (ipData === "106.160.84.100"){
                 ipData += "  （ さくぱんだ ）";
             }
-            if (ipData === "126.254.199.128"){
+            if (ipData === "126.254.199.128" || ipData === "126.253.185.248"){
                 ipData += "  （ ファイト ）";
             }
             if (ipData === "27.95.91.211"){
@@ -208,7 +208,7 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (ipData === undefined || ipData === "undefined"){
                 ipData = "  読み込み後に追加されたので取得不可";
             }
-            if (ipData === "106.167.71.54"){
+            if (ipData === "106.167.71.54" || ipData === "103.5.140.161"){
                 ipData += "  （ 臥薪 ）";
             }
             if (ipData === "180.60.148.0"){
@@ -250,14 +250,32 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (ipData === "133.106.35.32"){
                 ipData += "  （ 超めるめる ）";
             }
-            if (ipData === "114.129.4.225"){
-                ipData += "  （ 葉流 ）";
-            }
             if (ipData === "153.238.134.10"){
                 ipData += "  （ NTだぅ ）";
             }
             if (ipData.includes("114.129.4.") === true){
                 ipData += "  （ 多度津中学校生徒 ）";
+            }
+            if (ipData === "106.146.65.203"){
+                ipData += "  （ 游雲 ）";
+            }
+            if (ipData === "124.143.108.195"){
+                ipData += "  （ 色並朱音 ）";
+            }
+            if (ipData === "222.11.51.207"){
+                ipData += "  （ ペテロ ）";
+            }
+            if (ipData === "153.169.150.84"){
+                ipData += "  （ 苺かもよ ）";
+            }
+            if (ipData === "180.145.156.130"){
+                ipData += "  （ ぬこ ）";
+            }
+            if (ipData === "126.85.52.52"){
+                ipData += "  （ みりんこちゃん ）";
+            }
+            if (ipData === "49.104.32.35"){
+                ipData += "  （ らあと ）";
             }
             html += '<div id="' + id_head + data["seq"] + '" class="comment clearfix" >';
             html += '<div class="l">' + img_users_pict(data.uid, data.img_no) + '</div>';
