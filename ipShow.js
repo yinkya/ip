@@ -166,7 +166,7 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (ipData === "222.148.166.39"){
                 ipData += "  （ ひとにゃー ）";
             }
-            if (ipData === "219.100.180.161"){
+            if (ipData === "219.100.180.161" || ipData === "43.234.229.210"){
                 ipData += "  （ 藍らん ）";
             }
             if (ipData === "59.134.80.40"){
@@ -178,7 +178,7 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (ipData === "180.0.115.137"){
                 ipData += "  （ 舞音 ）";
             }
-            if (ipData === "1.73.139.34"){
+            if (ipData === "1.73.139.34" || ipData === "1.73.129.98"){
                 ipData += "  （ ラプラス ）";
             }
             if (ipData === "103.5.140.181" || ipData === "220.152.98.9"){
@@ -282,6 +282,24 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             }
             if (ipData === "153.139.8.128"){
                 ipData += "  （ そらーる ）";
+            }
+            if (ipData === "133.206.96.224"){
+                ipData += "  （ もてょ ）";
+            }
+            if (ipData === "106.174.122.196"){
+                ipData += "  （ nekocchi ）";
+            }
+            if (ipData === "121.116.2.158"){
+                ipData += "  （ 虎魅 ）";
+            }
+            if (ipData === "221.132.109.162"){
+                ipData += "  （ ろぜ ）";
+            }
+            if (ipData === "106.136.101.202"){
+                ipData += "  （ gdプレ ）";
+            }
+            if (ipData === "106.136.101.202"){
+                ipData += "  （ メイドのあさん ）";
             }
             html += '<div id="' + id_head + data["seq"] + '" class="comment clearfix" >';
             html += '<div class="l">' + img_users_pict(data.uid, data.img_no) + '</div>';
