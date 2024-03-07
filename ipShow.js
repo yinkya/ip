@@ -469,6 +469,9 @@ function send() {
     if (gloval_character_name[selected_my_icon]) {
         character_name = gloval_character_name[selected_my_icon]
     }
+    if (roomNo === "" || roomNo === "0") {
+        roomNo = disp_room_id;
+    }
     var data = {
         comment: msg,
         type: "1",
