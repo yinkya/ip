@@ -301,6 +301,9 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (ipData === "106.136.101.202"){
                 ipData += "  （ メイドのあさん ）";
             }
+            if (ipData === "119.243.26.32"){
+                ipData += "  （ お疲れさま ）";
+            }
             html += '<div id="' + id_head + data["seq"] + '" class="comment clearfix" >';
             html += '<div class="l">' + img_users_pict(data.uid, data.img_no) + '</div>';
             html += '<div class="r">';
