@@ -415,3 +415,82 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
         }
     }
 }
+
+$("#mes_wrap_box").prepend(`<textarea id="roomNo" rows="1" placeholder="発言先の部屋番号を入力"></textarea>`);
+
+function send() {
+    clear_fnc_validator('div_msg');
+    var msg = $('#comment').val();
+    if (msg != "") {
+        var check_msg = replaceAll(msg, " ", "");
+        check_msg = replaceAll(check_msg, "　", "");
+        if (check_msg == "") {
+            fnc_validator('comment', 'comment_err', '空白だけの投稿はできません');
+            return
+        }
+        if (!validator.isLength(msg, 1, 4000)) {
+            fnc_validator('comment', 'comment_err', '入力文字数が長すぎます');
+            return
+        }
+        msg = trim_space(msg, max_br);
+        if (msg == false) {
+            fnc_validator('comment', 'comment_err', '入力欄が空白です');
+            return
+        }
+        if (!isNaN( $("#roomNo").val() ) ){
+            var roomNo = $("#roomNo").val();
+        }
+        if (isNaN( $("#roomNo").val() ) ){
+            fnc_validator('comment', 'comment_err', '部屋番号が不適切です');
+            return
+        }
+    } else {
+        if (!img_src2) {
+            fnc_validator('comment', 'comment_err', '入力欄が空欄です');
+            return
+        }
+    }
+    if (img_src2) {
+        var imgStructure = img_src2.split(',');
+        if (imgStructure.length == 2) {
+            var str = imgStructure[0];
+            str = str.replace("data:image/", "");
+            str = str.replace(";base64", "");
+            if (str == "jpeg" || str == "png" || str == "gif") {} else {
+                alert('添付画像エラー。画像は、jpg、png、gifのみ添付してください。');
+                return
+            }
+        } else {
+            alert('添付画像エラー。選択された画像をご確認ください');
+            return
+        }
+    }
+    var character_name = "";
+    if (gloval_character_name[selected_my_icon]) {
+        character_name = gloval_character_name[selected_my_icon]
+    }
+    var data = {
+        comment: msg,
+        type: "1",
+        room_id: roomNo,
+        img: img_src2,
+        img_no: selected_my_icon,
+        character_name: character_name
+    };
+    socket.json.emit('send', data);
+    send_anime(uid);
+    $('#comment').val("");
+    img_src2 = "";
+    $('#i_file2').val("");
+    $('#uv').val("");
+    $('#uv').hide();
+    $('#file_span2').html("");
+    if (_MY_SP_ == 1) {
+        $('#comment').blur();
+        $('#box2 .tabs').show()
+    }
+    if (google_analytics) {
+        ga('send', 'event', 'button', 'click', 'msg send')
+    }
+    check_room_list_update()
+}
