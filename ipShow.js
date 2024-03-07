@@ -277,6 +277,12 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (ipData === "49.104.32.35"){
                 ipData += "  （ らあと ）";
             }
+            if (ipData === "123.50.245.19"){
+                ipData += "  （ ヤドリ ）";
+            }
+            if (ipData === "153.139.8.128"){
+                ipData += "  （ そらーる ）";
+            }
             html += '<div id="' + id_head + data["seq"] + '" class="comment clearfix" >';
             html += '<div class="l">' + img_users_pict(data.uid, data.img_no) + '</div>';
             html += '<div class="r">';
