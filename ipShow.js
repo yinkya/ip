@@ -254,7 +254,7 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
                 ipData += "  （ NTだぅ ）";
             }
             if (ipData.includes("114.129.4.") === true){
-                ipData += "  （ 多度津中学校生徒 ）";
+                ipData += "  （ i-FILTER@Cloud利用者 ）";
             }
             if (ipData === "106.146.65.203"){
                 ipData += "  （ 游雲 ）";
