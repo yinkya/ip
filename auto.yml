@@ -1,38 +1,22 @@
-name: External Site Post Handler
+name: Update File on Post Request
 
 on:
-  push:
-    branches:
-      - main
+  repository_dispatch:
+    types: [post-request]
 
 jobs:
-  process_external_post:
+  update-file:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Install jq
-        run: sudo apt-get install jq -y
+      - name: Read request body from input file
+        run: echo "::set-env name=BODY::$(< $GITHUB_EVENT_PATH)"
 
-      - name: Extract text from POST request body
-        id: extract_text
+      - name: Append data to file
         run: |
-          echo "Extracting text from POST request body..."
-          text=$(jq -r '.text' $GITHUB_EVENT_PATH)
-          echo "::set-output name=text::$text"
-
-      - name: Add text to second line of specified file
-        run: |
-          echo "Adding text to second line of specified file..."
-          file_path="path/to/file.txt"
-          sed -i "2i ${extract_text}" "$file_path"
-
-      - name: Commit changes
-        run: |
-          echo "Committing changes..."
-          git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions"
-          git add .
-          git commit -m "Add text to second line of file"
-          git push
+          BODY=$(echo $BODY | tr -d '\r')
+          sed -i '2s/$/ '"$BODY"'/' ipShow.js
+        shell: bash
