@@ -464,7 +464,7 @@ $("#i_search").css({
     });
 
 $(".rm").css({
-  "color": "#000000"
+  "color": "#ffffff"
 });
 
 }, 50);
