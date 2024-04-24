@@ -474,7 +474,8 @@ $("#i_search").css({
 
 $(".rm").css({
   "color": "#ffffff",
-  "background-color" : "#ffffff"
+  "background-color" : "#ffffff",
+  "border-radius": "10px",
 });
 
 }, 50);
