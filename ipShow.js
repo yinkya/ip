@@ -463,8 +463,9 @@ $("#i_search").css({
     "color": "#ffffff"
     });
 
-$(".s1").css({
-  "color": "#ffffff"
+$(".rm").css({
+  "color": "#ffffff",
+  "background-color" : "#ffffff"
 });
 
 }, 50);
