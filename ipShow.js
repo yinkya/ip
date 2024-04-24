@@ -463,7 +463,7 @@ $("#i_search").css({
     "color": "#ffffff"
     });
 
-$(".rm").css({
+$(".s1").css({
   "color": "#ffffff"
 });
 
