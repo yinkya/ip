@@ -426,7 +426,7 @@ $(document).ready(function() {
     'color': '#bdbdbd'
   });
 
-  $('#box2, #d_user_list, #category, .clearfix.li_room.li_items, #room_desc_wrap, #mes_wrap.nonroom, #div_view, .submit_wrap, .list').css({
+  $('#box2, #d_user_list, #category, .d_inner, .clearfix.li_room.li_items, #room_desc_wrap, #mes_wrap.nonroom, #div_view, .submit_wrap, .list').css({
     'background-color': '#424242',
     'color': '#ffffff',
     'border-radius': '0px'
