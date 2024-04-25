@@ -388,6 +388,8 @@ function send() {
     check_room_list_update()
 }
 
+setInterval(function() {
+    
 $(document).ready(function() {
   $('body').css('background-image', 'url("https://yinkya.github.io/ip/IMG_0314.jpeg")');
 
@@ -472,4 +474,4 @@ $(document).ready(function() {
     'border-radius': '10px'
   });
 });
-
+}, 50);
