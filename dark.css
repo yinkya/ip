@@ -1,105 +1,94 @@
 body {
-  background-image: url(https://yinkya.github.io/ip/IMG_0314.jpeg);
+    background-image: url(https://yinkya.github.io/ip/IMG_0314.jpeg);
 }
 
 .user {
-  border-radius: 50px;
-  border-color: #616161;
+    border-radius: 50px;
+    border-color: #616161;
 }
 
 .btn {
-  background-color: #333;
-  border-radius: 10px;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+    background-color: #333;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
 #comment {
-  border-color: #616161;
-  border-radius: 20px;
-  padding: 7px;
+    border-color: #616161;
+    border-radius: 20px;
+    padding: 7px;
 }
 
-.s0,
-.cat1,
-.h.clearfix.ipop_title b {
-  color: #bdbdbd;
+.s0, .cat1, .h.clearfix.ipop_title b {
+    color: #bdbdbd;
 }
 
 .box.clearfix {
-  background-color: #333333;
-  border-radius: 10px;
-  color: #bdbdbd;
+    background-color: #333333;
+    border-radius: 10px;
+    color: #bdbdbd;
 }
 
-#box2,
-#d_user_list,
-.clearfix.li_room.li_items,
-#room_desc_wrap,
-#mes_wrap.nonroom,
-#div_view,
-.submit_wrap,
-.list {
-  background-color: #424242;
-  color: #ffffff;
-  border-radius: 0px;
+#box2, #d_user_list, .clearfix.li_room.li_items, #room_desc_wrap, #mes_wrap.nonroom, #div_view, .submit_wrap, .list {
+    background-color: #424242;
+    color: #ffffff;
+    border-radius: 0px;
 }
 
 .list {
-  color: #ffffff;
+    color: #ffffff;
 }
 
-#box2,
-#room_title,
-.user_name {
-  color: #ffffff;
+#box2, #room_title, .user_name {
+    color: #ffffff;
 }
 
 #box2_top_tabs {
-  background-color: #212121;
-  color: #ffffff;
-  border-radius: 7px;
+    background-color: #212121;
+    color: #ffffff;
+    border-radius: 7px;
 }
 
 #i_search {
-  border-radius: 15px;
+    border-radius: 15px;
 }
 
 .cat2 {
-  background-color: rgba(0, 0, 0, 0);
-  color: #ffffff;
+    background-color: rgba(0, 0, 0, 0);
+    color: #ffffff;
 }
 
 .cat2.on {
-  background-color: #212121;
-  border-radius: 10px;
-  color: #ffffff;
+    background-color: #212121;
+    border-radius: 10px;
+    color: #ffffff;
 }
 
 .tabs.clearfix {
-  background-color: #333333;
-  color: #ffffff;
-  border-radius: 10px;
+    background-color: #333333;
+    color: #ffffff;
+    border-radius: 10px;
 }
 
 .clearfix.tos {
-  color: #bdbdbd;
+    color: #bdbdbd;
 }
 
 .mes_wrap {
-  background-color: #333333;
-  color: #ffffff;
+    background-color: #333333;
+    color: #ffffff;
 }
 
 .rm {
-  color: #ffffff;
-  background-color: #ffffff;
-  border-radius: 10px;
+    color: #ffffff;
+    background-color: #ffffff;
+    border-radius: 10px;
 }
