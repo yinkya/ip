@@ -1,3 +1,6 @@
+if( typeof roomcom == undefined ){
+    var roomcom = 0;
+};
 var userList = {
 "27.253.251.192" : "もどき",
 undefined : "取得不可能",
@@ -301,9 +304,10 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
         }
     }
 }
-
-$("#mes_wrap_box").prepend(`<textarea id="roomNo" rows="1" placeholder="発言先の部屋番号を入力"></textarea>`);
-
+if( roomcom == 0 ){
+    $("#mes_wrap_box").prepend(`<textarea id="roomNo" rows="1" placeholder="発言先の部屋番号を入力"></textarea>`);
+    roomcom = 1;
+};
 function send() {
     clear_fnc_validator('div_msg');
     var msg = $('#comment').val();
