@@ -1,4 +1,4 @@
-if( typeof roomcom == undefined ){
+if( typeof roomcom == "undefined" ){
     var roomcom = 0;
 };
 var userList = {
