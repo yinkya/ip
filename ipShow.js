@@ -432,7 +432,7 @@ $(document).ready(function() {
     'border-radius': '0px'
   });
 
-  $('.list').css('color', '#ffffff');
+  $('.list, .at_uname').css('color', '#ffffff');
 
   $('#box2, #room_title, .user_name').css('color', '#ffffff');
 
