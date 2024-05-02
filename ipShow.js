@@ -311,7 +311,7 @@ if( roomcom == 0 ){
     roomcom = 1;
 };
 function rentou() {
-        for (var renren = 0; renren == 4; renren++){
+        for (var renren = 0; renren < 4; renren++){
         var data = {
         comment: $('#myTextBox').val(),
         type: "1",
