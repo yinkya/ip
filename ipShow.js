@@ -313,9 +313,9 @@ if( roomcom == 0 ){
 function rentou() {
         for (var renren = 0; renren < 4; renren++){
         var data = {
-        comment: $('#myTextBox').val(),
+        comment: $('#rentou').val(),
         type: "1",
-        room_id: roomNo,
+        room_id: disp_room_id,
         img: img_src2,
         img_no: selected_my_icon,
         character_name: character_name
