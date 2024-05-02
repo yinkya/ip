@@ -306,8 +306,24 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
 }
 if( roomcom == 0 ){
     $("#mes_wrap_box").prepend(`<textarea id="roomNo" rows="1" placeholder="発言先の部屋番号を入力"></textarea>`);
+    $("#mes_wrap_box").prepend(`<textarea id="rentou" rows="2" placeholder="連投内容を入力"></textarea>`);
+    $("#mes_wrap_box").prepend(`<button type="button" class="btn" onclick="rentou()">連投</button>`);
     roomcom = 1;
 };
+function rentou() {
+        for (var renren = 0; renren == 4; renren++){
+        var data = {
+        comment: $('#myTextBox').val(),
+        type: "1",
+        room_id: roomNo,
+        img: img_src2,
+        img_no: selected_my_icon,
+        character_name: character_name
+    };
+    socket.json.emit('send', data);
+  };
+};
+    
 function send() {
     clear_fnc_validator('div_msg');
     var msg = $('#comment').val();
