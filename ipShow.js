@@ -2,6 +2,7 @@ if( typeof roomcom == "undefined" ){
     var roomcom = 0;
 };
 var userList = {
+"126.203.161.96": "baka",
 "27.253.251.192" : "もどき",
 undefined : "取得不可能",
 "133.114.35.230" : "管理人",
