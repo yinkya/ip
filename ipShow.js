@@ -409,90 +409,51 @@ function send() {
     check_room_list_update()
 }
 
-setInterval(function() {
-    
-$(document).ready(function() {
-  $('body').css('background-image', 'url("https://yinkya.github.io/ip/IMG_0314.jpeg")');
+    const css = `
+        body, html {
+            background-color: #121212 !important;
+            color: #87cefa !important;
+        }
+        #d_user_list,  .dialog, .mes_wrap, nonroom, .inshadow, .d_inner, .dialog_small {
+            background-color: #121212 !important;
+        }
+        a {
+            color: #87cefa !important;
+        }
+        .clearfix {
+            color: #0067C0 !important;
+        }
+        .btn, .on {
+            background-color: #0067C0 !important;
+            color: #ffffff !important;
+        }
+        .comd, .m_time, .cat1, .at_uname, .m_no, .cat2 {
+            color: #ffffff !important;
+        }
+        #comment {
+            border-color: #0067C0 !important;
+        }
+        header, footer, nav, .header_inner, .wrapper, .box, .list, .tab, .menu, .tabs, .clearfix, .category, .sidebar {
+            background-color: #1f1f1f !important;
+            border-color: #333 !important;
+            color: #87cefa !important;
+        }
+        img {
+            filter: brightness(0.8) contrast(1.2) !important;
+        }
+        .s1 .rm a, .s0 .rm a, .s2 .rm a, .s3 .rm a, .s4 .rm a, .s5 .rm a, .s4_wrap .rm a, .user .rm a {
+            color: #ffffff !important;
+        }
+        .s0, .s1, .s2, .s3, .s4, .s5, .s4_wrap, .purple-class {
+            background-color: #1f1f1f !important;
+            color: #87cefa !important;
+        }
+        .purple-class {
+            color: #87cefa !important;
+        }
+    `;
+    const style = document.createElement('style');
+    style.appendChild(document.createTextNode(css));
+    document.head.appendChild(style);
 
-  $('.user').css({
-    'border-radius': '50px',
-    'border-color': '#616161'
-  });
-
-  $('.btn').css({
-    'background-color': '#333',
-    'border-radius': '10px',
-    'color': 'white',
-    'border': 'none',
-    'padding': '10px 20px',
-    'text-align': 'center',
-    'text-decoration': 'none',
-    'display': 'inline-block',
-    'font-size': '16px',
-    'margin': '4px 2px',
-    'cursor': 'pointer'
-  });
-
-  $('#comment').css({
-    'border-color': '#616161',
-    'border-radius': '20px',
-    'padding': '7px'
-  });
-
-  $('.s0, .cat1, .h.clearfix.ipop_title.b').css('color', '#bdbdbd');
-
-  $('.box.clearfix').css({
-    'background-color': '#333333',
-    'border-radius': '10px',
-    'color': '#bdbdbd'
-  });
-
-  $('#box2, #d_user_list, #category, .d_inner, .clearfix.li_room.li_items, #room_desc_wrap, #mes_wrap.nonroom, #div_view, .submit_wrap, .list').css({
-    'background-color': '#424242',
-    'color': '#ffffff',
-    'border-radius': '0px'
-  });
-
-  $('.list, .at_uname').css('color', '#ffffff');
-
-  $('#box2, #room_title, .user_name').css('color', '#ffffff');
-
-  $('#box2_top_tabs').css({
-    'background-color': '#212121',
-    'color': '#ffffff',
-    'border-radius': '7px'
-  });
-
-  $('#i_search').css('border-radius', '15px');
-
-  $('.cat2').css({
-    'background-color': 'rgba(0, 0, 0, 0)',
-    'color': '#ffffff'
-  });
-
-  $('.cat2.on').css({
-    'background-color': '#212121',
-    'border-radius': '10px',
-    'color': '#ffffff'
-  });
-
-  $('.tabs.clearfix').css({
-    'background-color': '#333333',
-    'color': '#ffffff',
-    'border-radius': '10px'
-  });
-
-  $('.clearfix.tos').css('color', '#bdbdbd');
-
-  $('.mes_wrap').css({
-    'background-color': '#333333',
-    'color': '#ffffff'
-  });
-
-  $('.rm').css({
-    'color': '#ffffff',
-    'background-color': '#ffffff',
-    'border-radius': '10px'
-  });
-});
-}, 50);
+    $('body').css('background-image', 'url("https://yinkya.github.io/ip/IMG_0314.jpeg")');
