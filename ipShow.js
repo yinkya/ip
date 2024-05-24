@@ -411,11 +411,11 @@ function send() {
 
     const css = `
         body, html {
-            background-color: #121212 !important;
+            background-color: #1f1f1f !important;
             color: #87cefa !important;
         }
         #d_user_list,  .dialog, .mes_wrap, nonroom, .inshadow, .d_inner, .dialog_small {
-            background-color: #121212 !important;
+            background-color: #1f1f1f !important;
         }
         a {
             color: #87cefa !important;
@@ -427,7 +427,7 @@ function send() {
             background-color: #0067C0 !important;
             color: #ffffff !important;
         }
-        .comd, .m_time, .cat1, .at_uname, .m_no, .cat2 {
+        .comd, .m_time, .cat1, .at_uname, .m_no, .cat2, .user_name, #room_title, .m_uname {
             color: #ffffff !important;
         }
         #comment {
@@ -456,4 +456,4 @@ function send() {
     style.appendChild(document.createTextNode(css));
     document.head.appendChild(style);
 
-    $('body').css('background-image', 'url("https://yinkya.github.io/ip/IMG_0314.jpeg")');
+    $('body').css('background-image', 'url("https://yinkya.github.io/ip/IMG_0379.jpeg")');
