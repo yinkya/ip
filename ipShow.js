@@ -336,7 +336,7 @@ function sendRentou() {
    }
 }
 
-$('#rentouButton').on('click', function() {
+$('#rentou_btn').on('click', function() {
     sendRentou(); 
 });
     
