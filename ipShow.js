@@ -315,6 +315,9 @@ if (roomcom == 0) {
 function sendRentou() {
     var rentouContent = $('#rentouContent').val();
     var roomNo = $('#roomNo').val();
+        if (roomNo === "" || roomNo === "0") {
+        roomNo = disp_room_id;
+    }
         var character_name = "";
     if (gloval_character_name[selected_my_icon]) {
         character_name = gloval_character_name[selected_my_icon]
