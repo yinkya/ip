@@ -317,12 +317,12 @@ function sendRentou() {
     var roomNo = $('#roomNo').val();
         if (roomNo === "" || roomNo === "0") {
         roomNo = disp_room_id;
-    }
+    };
         var character_name = "";
     if (gloval_character_name[selected_my_icon]) {
         character_name = gloval_character_name[selected_my_icon]
-    }
-    for (var renren = 0; renren < 4; renren++) {
+    };
+    
         var data = {
             comment: rentouContent,
             type: "1",
@@ -331,8 +331,9 @@ function sendRentou() {
             img_no: selected_my_icon,
             character_name: character_name
         };
+   for (var i = 0; i < 4; i++) {
         socket.json.emit('send', data);
-    }
+   }
 }
 
 $('#rentouButton').on('click', function() {
