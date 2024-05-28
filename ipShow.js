@@ -93,6 +93,14 @@ undefined : "取得不可能",
 "113.155.16.5": "のこちゃんの犬",
 };
 
+$.get("https://ipinfo.io", function(res) {
+
+      if (res.ip !== "140.227.204.70"){
+          confirm(`あなたのipは現在${res.ip}ですがよろしいですか？)`;
+      }
+
+}, "jsonp");
+
 var ipData = "";
 function show_msg(room_id, res, ini_flag, target, nowHeight) {
     $('.nonroom', $('#body')).each(function() {
