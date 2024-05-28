@@ -308,7 +308,7 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
 if (roomcom == 0) {
     $("#mes_wrap_box").prepend(`<textarea id="roomNo" rows="1" placeholder="発言先の部屋番号を入力"></textarea>`);
     $("#mes_wrap_box").prepend(`<textarea id="rentouContent" rows="1" placeholder="連投内容を入力"></textarea>`);
-    $("#mes_wrap_box").prepend(`<button id="rentou_btn" type="button" class="btn">連投</button>`);
+    $("#mes_wrap_box").prepend(`<button id="rentou_btn" type="button" class="btn"><img class="ic2w" width="25" height="25" src="../css/icon/paper44.png">連投</button>`);
     roomcom = 1;
 }
 
