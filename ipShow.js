@@ -315,6 +315,10 @@ if (roomcom == 0) {
 function sendRentou() {
     var rentouContent = $('#rentouContent').val();
     var roomNo = $('#roomNo').val();
+        var character_name = "";
+    if (gloval_character_name[selected_my_icon]) {
+        character_name = gloval_character_name[selected_my_icon]
+    }
     for (var renren = 0; renren < 4; renren++) {
         var data = {
             comment: rentouContent,
