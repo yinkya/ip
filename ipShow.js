@@ -317,6 +317,7 @@ if (roomcom == 0) {
     $("#mes_wrap_box").prepend(`<textarea id="roomNo" rows="1" placeholder="発言先の部屋番号を入力"></textarea>`);
     $("#mes_wrap_box").prepend(`<textarea id="rentouContent" rows="1" placeholder="連投内容を入力"></textarea>`);
     $("#mes_wrap_box").prepend(`<button id="rentou_btn" type="button" class="btn">連投</button>`);
+    $("#mes_wrap_box").prepend(`<button id="img_reset" type="button" class="btn">×</button>`);
     roomcom = 1;
 }
 
@@ -343,6 +344,11 @@ function sendRentou() {
         socket.json.emit('send', data);
    }
 }
+$('#img_reset').on('click', function() {
+    img_src2 = "";
+    $('#i_file2').val("");
+    alert("写真をリセットしました！");
+});
 
 $('#rentou_btn').on('click', function() {
     sendRentou(); 
