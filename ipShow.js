@@ -183,7 +183,7 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             html += '<div class="l">' + img_users_pict(data.uid, data.img_no) + '</div>';
             html += '<div class="r">';
             html += '<div class="comment_head"><span class="m_no">' + data["seq"] + '</span><span class="m_uname">' + name + '</span><span class="m_time">' + date_f(data.time) + '</span> <span>' + "ip " + ipData + '</span></div>';        
-            html += '<a>uuid '+ uuidData + '</a><a>  uid ' + data.uid + '</a>';
+            html += '<a>uuid '+ uuidData + '  uid ' + data.uid + '</a>';
             html += '<div class="comd' + is_aa + '">' + comvert_msg(data.comment) + imgdata + '</div>';
             html += '</div>';
             html += '</div>';
