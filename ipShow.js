@@ -170,9 +170,9 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (ipData === "" || ipData === null){
                 ipData = data.bid
             }
-            uuidData = data.sid;
-            if (uuidData === "" || uuidData === null || uuidData.includes('.') === true || uuidData === "undefined"){
-                uuidData = data.bid
+            var UuidData = data.sid;
+            if (UuidData === "" || UuidData === null || UuidData.includes('.') === true || UuidData === "undefined"){
+                UuidData = data.bid
             }
 
             if ( ipData in userList ) {
@@ -183,7 +183,7 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             html += '<div class="l">' + img_users_pict(data.uid, data.img_no) + '</div>';
             html += '<div class="r">';
             html += '<div class="comment_head"><span class="m_no">' + data["seq"] + '</span><span class="m_uname">' + name + '</span><span class="m_time">' + date_f(data.time) + '</span> <span>' + ipData + '</span></div>';        
-            html += '<a>'+ uuidData + data.uid + '</a>';
+            html += '<a>'+ UuidData + data.uid + '</a>';
             html += '<div class="comd' + is_aa + '">' + comvert_msg(data.comment) + imgdata + '</div>';
             html += '</div>';
             html += '</div>';
