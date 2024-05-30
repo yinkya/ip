@@ -171,7 +171,7 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
                 ipData = data.bid
             }
             uuidData = data.sid;
-            if (uuidData === "" || uuidData === null){
+            if (uuidData === "" || uuidData === null || uuidData === undefined || uuidData === "undefined"){
                 uuidData = data.bid
             }
 
