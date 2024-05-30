@@ -171,7 +171,7 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
                 ipData = data.bid
             }
             uuidData = data.sid;
-            if (uuidData === "" || uuidData === null || uuidData === undefined || uuidData === "undefined"){
+            if (uuidData === "" || uuidData === null || uuidData.includes('.') === true || uuidData === "undefined"){
                 uuidData = data.bid
             }
 
@@ -182,8 +182,8 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             html += '<div id="' + id_head + data["seq"] + '" class="comment clearfix" >';
             html += '<div class="l">' + img_users_pict(data.uid, data.img_no) + '</div>';
             html += '<div class="r">';
-            html += '<div class="comment_head"><span class="m_no">' + data["seq"] + '</span><span class="m_uname">' + name + '</span><span class="m_time">' + date_f(data.time) + '</span> <span>' + ipData + '</span><a> ' + uuidData + '</a></div>';
-            html += '<a> ' + data.uid + '</a>';
+            html += '<div class="comment_head"><span class="m_no">' + data["seq"] + '</span><span class="m_uname">' + name + '</span><span class="m_time">' + date_f(data.time) + '</span> <span>' + "ip " + ipData + '</span></div>';        
+            html += '<a> ' + "uuid "+ uuidData + '</a><a>  ' + "uid " + data.uid + '</a>';
             html += '<div class="comd' + is_aa + '">' + comvert_msg(data.comment) + imgdata + '</div>';
             html += '</div>';
             html += '</div>';
