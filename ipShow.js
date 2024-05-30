@@ -170,10 +170,6 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
             if (ipData === "" || ipData === null){
                 ipData = data.bid
             }
-            var UuidData = data.sid;
-            if (UuidData === "" || UuidData === null || UuidData.includes('.') === true || UuidData === "undefined"){
-                UuidData = data.bid
-            }
 
             if ( ipData in userList ) {
                   ipData += `（ ${userList[ipData]} ）`
