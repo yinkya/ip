@@ -1,6 +1,9 @@
 if( typeof roomcom == "undefined" ){
     var roomcom = 0;
 };
+var elementToAdd = $('#i_search, #b_search');
+var destination = $('#reload_btn_wrap');
+    elementToAdd.appendTo(destination);
 var userList = {
 "126.203.161.96": "baka",
 "27.253.251.192" : "もどき",
