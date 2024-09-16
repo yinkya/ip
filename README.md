@@ -1,6 +1,5 @@
-# IPアドレスなどを取得するためリポジトリ
+## IPアドレスなどを取得するためリポジトリ
 
-## <利用方法>
-1.次のコードをコピーする。『javascript:$('%3Cscript%20src=%22https://yinkya.github.io/ip/ipShow.js%22%20charset=%22UTF-8%22%3E%3C/script%3E').appendTo('body');』
-
-2.ブックマークに入れてNETROOMにて使用する。
+主にJS,CSSを使用している。
+JSの中でCSSを呼び出す形にしているのでJSも比較的スッキリしている方。
+CSSは苦手なので汚いコードである。
