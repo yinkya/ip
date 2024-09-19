@@ -107,7 +107,6 @@ $.get("https://ipinfo.io", function(res) {
 $('#reload_btn').remove();
 
 var ipData = "";
-さっきのコードのshow messageを以下のコードに変えて正確に作って下さい。
 
 function show_msg(room_id, res, ini_flag, target, nowHeight) {
     $('.nonroom', $('#body')).each(function() {
