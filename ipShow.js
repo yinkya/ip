@@ -104,6 +104,8 @@ $.get("https://ipinfo.io", function(res) {
 
 }, "jsonp");
 
+$('#reload_btn').remove();
+
 var ipData = "";
 function show_msg(room_id, res, ini_flag, target, nowHeight) {
     $('.nonroom', $('#body')).each(function() {
