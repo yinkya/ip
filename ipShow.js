@@ -109,10 +109,11 @@ $('#reload_btn').remove();
 var ipData = "";
 function show_msg(room_id, res, ini_flag, target, nowHeight) {
     $('.nonroom', $('#body')).each(function() {
-        $(this).show()
+        $(this).show();
     });
     $('#d_received_msg').hide();
-    if (res.length == 0) {
+    
+    if (res.length === 0) {
         $('#prev_page').hide();
         $('#next_page').hide();
         $_view.html('');
@@ -122,188 +123,139 @@ function show_msg(room_id, res, ini_flag, target, nowHeight) {
         m_hide();
         if (google_analytics) {
             var url = "/" + room_id + "/";
-            ga('send', 'pageview', url)
+            ga('send', 'pageview', url);
         }
-        if (room_id) {
-            var mode = 1;
-            pc_mode(mode)
-        } else {
-            var mode = 0;
-            pc_mode(mode)
-        }
-        return
+        var mode = room_id ? 1 : 0;
+        pc_mode(mode);
+        return;
     }
+    
     var html = "";
     var last_id = "";
     var last_seq = 0;
+    
     for (var i = 0; i < res.length; i++) {
-        if (res[i]["comment"] != undefined) {
-            data = res[i];
-            if (data.uname == '') {
-                name = 'ゲスト'
-            } else {
-                name = data.uname;
-                if (data.character_name) {
-                    name = data.character_name + '<span class="at_uname">@' + name + '</span>'
-                }
-                var uid_data = {};
-                uid_data[data.uid] = [data.uname, data.img_no];
-                add_user_store(uid_data)
+        if (res[i]["comment"] !== undefined) {
+            var data = res[i];
+            var name = data.uname === '' ? 'ゲスト' : data.uname;
+            if (data.character_name) {
+                name = data.character_name + '<span class="at_uname">@' + name + '</span>';
             }
-            if (data.uid == "" || data.uid == "guest" || data.uid == undefined) {
-                data.img_no = 0;
-                var img = 'guest'
-            } else {
-                var img = data.uid
-            }
-            if (target == 1) {
-                var id_head = "oc"
-            } else {
-                var id_head = "c"
-            }
-            if (data.img) {
-                var file = data.img;
-                var imgdata = '<br><img class="click_img" src="/img/tmp/' + room_id + '_' + data["seq"] + '.jpg" >'
-            } else {
-                var imgdata = ""
-            }
-            var is_aa = '';
-            if (data.comment.indexOf('　 ') !== -1) {
-                is_aa = ' is_aa'
-            }
-            ipData = data.ip;
-            if (ipData === "" || ipData === null){
-                ipData = data.bid
+            var uid_data = {};
+            uid_data[data.uid] = [data.uname, data.img_no];
+            add_user_store(uid_data);
+
+            var img = (data.uid === "" || data.uid === "guest" || data.uid === undefined) ? 'guest' : data.uid;
+            var id_head = (target === 1) ? "oc" : "c";
+            var imgdata = data.img ? '<br><img class="click_img" src="/img/tmp/' + room_id + '_' + data.seq + '.jpg" >' : '';
+            var is_aa = data.comment.indexOf('　 ') !== -1 ? ' is_aa' : '';
+
+            // IPアドレスの処理
+            var ipData = (data.ip === "" || data.ip === null || data.ip === undefined) ? data.bid : data.ip;
+            if (ipData in userList) {
+                ipData += `（ ${userList[ipData]} ）`;
             }
 
-            if ( ipData in userList ) {
-                  ipData += `（ ${userList[ipData]} ）`
-            }
-
-            html += '<div id="' + id_head + data["seq"] + '" class="comment clearfix" >';
+            html += '<div id="' + id_head + data.seq + '" class="comment clearfix">';
             html += '<div class="l">' + img_users_pict(data.uid, data.img_no) + '</div>';
             html += '<div class="r">';
-            html += '<div class="comment_head"><span class="m_no">' + data["seq"] + '</span><span class="m_uname">' + name + '</span><span class="m_time">' + date_f(data.time) + '</span> <span>' + ipData + '</span><a> uid: ' + data.uid + '</a></div>';        
+            html += '<div class="comment_head"><span class="m_no">' + data.seq + '</span><span class="m_uname">' + name + '</span><span class="m_time">' + date_f(data.time) + '</span> <span>' + ipData + '</span><a> uid: ' + data.uid + '</a></div>';
             html += '<div class="comd' + is_aa + '">' + comvert_msg(data.comment) + imgdata + '</div>';
             html += '</div>';
             html += '</div>';
-            last_id = 'c' + data["seq"];
-            last_seq = data["seq"] - 0
+
+            last_id = 'c' + data.seq;
+            last_seq = data.seq - 0;
         }
     }
-    if (target == 1) {
-        $('#d_msg_one div.h').html('<div class="h clearfix ipop_title"><small class="link_pankuzu">≫' + data["seq"] + '</small><div class="d_close"><span class="close" id="close_d_msg_one">&#12288;×&#12288;</span></div></div>');
-        $('#close_d_msg_one').unbind(_E.clickd);
-        $('#close_d_msg_one').bind(_E.clickd, function(e) {
+    
+    if (target === 1) {
+        $('#d_msg_one div.h').html('<div class="h clearfix ipop_title"><small class="link_pankuzu">≫' + data.seq + '</small><div class="d_close"><span class="close" id="close_d_msg_one">&#12288;×&#12288;</span></div></div>');
+        $('#close_d_msg_one').unbind(_E.clickd).bind(_E.clickd, function(e) {
             e.preventDefault();
             $('#d_msg_one').hide();
-            sp_d_hide()
+            sp_d_hide();
         });
         $('#d_msg_one').show();
         $('#ul_msg_one').html(html);
         m_hide();
-        return
+        return;
     }
+    
     var page = get_parameter(1);
     if (!page) {
-        last_msg_seq[room_id] = last_seq
+        last_msg_seq[room_id] = last_seq;
     }
+    
     var room_last_seq = last_msg_seq[room_id];
-    var this_last_seq = res[(res.length - 1)].seq;
-    if (ini_flag == 1 || ini_flag == 2) {
-        if (res[0]['seq'] <= 1) {
-            $('#prev_page').hide();
-            $('#totop2').hide()
-        } else {
-            $('#prev_page').show();
-            $('#totop2').show()
-        }
-        if ((!room_last_seq) || this_last_seq < room_last_seq) {
-            $('#next_page').show();
-            $('#tobottom2').show()
-        } else {
-            $('#next_page').hide();
-            $('#tobottom2').hide()
-        }
+    var this_last_seq = res[res.length - 1].seq;
+    
+    if (ini_flag === 1 || ini_flag === 2) {
+        $('#prev_page').toggle(res[0]['seq'] > 1);
+        $('#totop2').toggle(res[0]['seq'] > 1);
+        $('#next_page').toggle(!room_last_seq || this_last_seq < room_last_seq);
+        $('#tobottom2').toggle(!room_last_seq || this_last_seq < room_last_seq);
     } else {
-        if (last_seq % msg_limit == 0) {
+        if (last_seq % msg_limit === 0) {
             $('#next_page').show();
             $('#tobottom2').show();
-            to_bottom('div_view', 0)
+            to_bottom('div_view', 0);
         }
     }
-    if (ini_flag == 1) {
+
+    if (ini_flag === 1) {
         $_view.html(html);
-        var page = which_page(last_seq);
+        page = which_page(last_seq);
         $('#page_no').html(page + 'ページ目');
-        if (room_id) {
-            var mode = 1;
-            pc_mode(mode)
-        } else {
-            var mode = 0;
-            pc_mode(mode)
-        }
-    } else if (ini_flag == 2) {
+        pc_mode(room_id ? 1 : 0);
+    } else if (ini_flag === 2) {
         $_view.html(html);
-        var page = which_page(last_seq);
+        page = which_page(last_seq);
         $('#page_no').html(page + 'ページ目');
-        if (jump_bottom) {
-            to_bottom('div_view', 0)
-        } else {
-            to_top('div_view', 0)
-        }
-        now_page = which_page(last_seq)
+        jump_bottom ? to_bottom('div_view', 0) : to_top('div_view', 0);
+        now_page = which_page(last_seq);
     } else {
-        var bandai = "";
-        var bandai2 = "";
         var bandai = which_page(last_seq);
-        if (bandai == disp_page) {
-            if (_MY_SP_ != '1') {
-                var _cur_scroll = $("#div_view").scrollTop();
-                _cur_scroll = _cur_scroll;
-                var _max_scroll = $("#div_view_in").outerHeight() - $("#div_view").height() - 100
-            } else {
-                var _cur_scroll = window.pageYOffset + window.innerHeight;
-                _cur_scroll = _cur_scroll;
-                var _max_scroll = document.documentElement.scrollHeight;
-                _max_scroll = _max_scroll - 200
-            }
-            var _do_scroll = 0;
-            if (_max_scroll <= _cur_scroll) {
-                _do_scroll = 1
-            }
+        if (bandai === disp_page) {
+            var _cur_scroll = _MY_SP_ !== '1' ? $("#div_view").scrollTop() : window.pageYOffset + window.innerHeight;
+            var _max_scroll = _MY_SP_ !== '1' ? $("#div_view_in").outerHeight() - $("#div_view").height() - 100 : document.documentElement.scrollHeight - 200;
+            var _do_scroll = _max_scroll <= _cur_scroll ? 1 : 0;
             $_view.append(html);
-            if (_do_scroll == 1) {
-                if (_Android_) {
-                    setTimeout('to_bottom("div_view",0)', 500)
-                } else {
-                    to_bottom('div_view', 100)
-                }
+            if (_do_scroll) {
+                _Android_ ? setTimeout('to_bottom("div_view",0)', 500) : to_bottom('div_view', 100);
             } else {
                 now_received_msg[room_id] = res[0];
-                if (_Android_) {
-                    if (document.activeElement.id != "comment") {
-                        $('#d_received_msg').show();
-                        $('#ul_received_msg').html(html)
-                    }
+                if (_Android_ && document.activeElement.id !== "comment") {
+                    $('#d_received_msg').show();
+                    $('#ul_received_msg').html(html);
                 } else {
                     $('#d_received_msg').show();
-                    $('#ul_received_msg').html(html)
+                    $('#ul_received_msg').html(html);
                 }
             }
         } else {
             now_received_msg[room_id] = res[0];
-            if (_Android_) {
-                if (document.activeElement.id != "comment") {
-                    $('#d_received_msg').show();
-                    $('#ul_received_msg').html(html)
-                }
+            if (_Android_ && document.activeElement.id !== "comment") {
+                $('#d_received_msg').show();
+                $('#ul_received_msg').html(html);
             } else {
                 $('#d_received_msg').show();
-                $('#ul_received_msg').html(html)
+                $('#ul_received_msg').html(html);
             }
         }
     }
+    
+    m_hide();
+    
+    if (ini_flag === 1 || ini_flag === 2) {
+        disp_page = which_page(last_seq);
+        var url_page = which_page(last_seq, room_id);
+        if (google_analytics) {
+            var url = url_page ? "/" + room_id + "/" + url_page : "/" + room_id + "/";
+            ga('send', 'pageview', url);
+        }
+    }
+}
     m_hide();
     if (ini_flag == 1 || ini_flag == 2) {
         disp_page = which_page(last_seq);
