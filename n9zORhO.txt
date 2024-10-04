@@ -8,7 +8,7 @@
 // @run-at       document-idle
 // ==/UserScript==
 
-const apiKey = ''; // ここに自分のAPIキーを入れてください
+const apiKey = '4fd28a682ddb23'; // ここに自分のAPIキーを入れてください
 
 var userIpMap = loadUserIpMap();
 var userIpDetails = loadUserIpDetails();
